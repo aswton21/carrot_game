@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window cordinate</title>
+    <style>
+        body{
+            background-color: #333333;
+        }
+        .box{
+            margin: 4px;
+            width: 50px;
+            height: 50px;
+            padding: 30px;
+            background-color: wheat;
+            }
+        #orange{
+            background-color: orange;
+        }
+        .btnbox{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            text-align: right;
+        }
+        button{
+            background-color: gray;
+            border-radius: 6px;
+            transition: transform 0.5s ease;
+            
+        }
+        button:active{
+            transform:translateY(4px)
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="btnbox">
+        <button class="scrollby">Scroll by 100px(y)</button>
+        <button class="scrollto">Scroll to 100px(y)</button>
+        <button class="scrollView">Scroll into special</button>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <div class="box" id="orange"></div>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <div class="box"></div>
+
+    <div class="box"></div>
+
+    <div class="box"></div>
+
+    <div class="box"></div>
+
+
+
+
+    <script>
+        const orangebtn = document.getElementById("orange");
+        function cordinate(event){
+            console.log(orangebtn.getBoundingClientRect());
+            console.log(
+                `client: ${event.clientX}, ${event.clientY}\npage: ${event.pageX}, ${event.pageY}
+                `)
+        }
+        orangebtn.addEventListener("click", cordinate);
+
+        const scrollby = document.querySelector(".scrollby");
+        const scrollto = document.querySelector(".scrollto");
+        const scrollView = document.querySelector(".scrollView");
+        
+        
+        scrollby.addEventListener('click', ()=>{
+            window.scrollBy(0,100);
+        })
+
+        scrollto.addEventListener('click', ()=>{
+            window.scrollTo({top: 300px, left: 50px;, behavior: 'smooth'});
+        })
+
+        scrollView.addEventListener('click', ()=>{
+            orangebtn.scrollIntoView();
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window size</title>
+    <style>
+        .size{
+            display:inline-block;
+            background-color: thistle;
+            margin: 16px;
+            padding: 16px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="size">Window</div>
+
+    <script>
+        const wsize = document.querySelector(".size");
+        function updateSize(){
+            wsize.innerHTML = `
+            window screen size : ${window.screen.width} , ${window.screen.height} <br/>
+            
+            windowinner: ${window.innerWidth}, ${window.innerHeight}<br/>
+            windowouter: ${window.outerWidth}, ${window.outerHeight}<br/>
+            documentEliment.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight} <br/>
+            `;
+        }
+        window.addEventListener('resize', () => {
+            updateSize();
+        })
+        updateSize();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   
+</head>
+<body>
+    <div id="window_size" style="background-color: bisque;">
+        
+    </div>
+    
+
+
+    <script>
+    let txt = "";
+    txt += "<p>windowscreen: " + window.screen.width + ", " + window.screen.height + "</p>";
+
+    txt += "<p>windowinner: " + window.innerWidth + ", " + window.innerHeight + "</p>";
+    txt += "<p>windowouter: " + window.outerWidth + ", " + window.outerHeight + "</p>";
+    txt += "<p>documentEliment.clientWidth: " + document.documentElement.clientWidth + ", " + document.documentElement.clientHeight + "</p>";
+    
+
+    document.getElementById("window_size").innerHTML = txt;
+    window.onresize = function(){ location.reload(); }
+
+
+
+    </script>
+</body>
+</html>
