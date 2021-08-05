@@ -111,6 +111,7 @@ re_play.addEventListener("click", () => {
   win_lost.style.display = "none";
   clicked = false;
   game_status = false;
+  left_carrot.innerHTML = cnt;
   generateCarrots();
   generateBugs();
   audio_play();
@@ -138,7 +139,7 @@ function lost_end() {
 
 gameArea.addEventListener("click", () => {
   const id = event.target.dataset.id;
-
+  
   if (id) {
     const carrot = document.querySelector(`.carrot[data-id="${id}"]`);
     const audio_carrot = new Audio("carrot/sound/carrot_pull.mp3");
